@@ -78,5 +78,3 @@ OTEL_LOG_LEVEL=info
 - grpc
 
 Automatically instruments the following libraries:
-
-update readme to better explain the project
