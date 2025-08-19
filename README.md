@@ -1,6 +1,6 @@
 #  mtn-otel-sdk
 
-> zero-config otel tracing library for Node.js/TypeScript apps at MTN.
+ zero-config otel tracing library for Node.js/TypeScript apps at MTN.
 
 ---
 
@@ -69,6 +69,7 @@ OTEL_LOG_LEVEL=info
 ```
 
 ## Supported Auto-Instrumentations
+Automatically instruments the following libraries:
 - http, https
 
 - express
@@ -76,5 +77,3 @@ OTEL_LOG_LEVEL=info
 - fs, dns
 
 - grpc
-
-Automatically instruments the following libraries:
