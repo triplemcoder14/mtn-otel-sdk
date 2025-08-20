@@ -2,11 +2,25 @@
   "name": "mtn-otel-sdk",
   "version": "1.0.0",
   "main": "dist/index.js",
+  "description": "Zero-config OpenTelemetry SDK for Node.js apps at MTN",
   "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "build": "tsc",
     "prepare": "npm run build"
   },
+  "keywords": [
+    "opentelemetry",
+    "otel",
+    "nodejs",
+    "instrumentation",
+    "observability",
+    "tracing"
+  ],
+  "author": "Muutasim-Mukhtar <mukhy16@gmail.com>",
+  "license": "MIT",
   "dependencies": {
     "@opentelemetry/api": "^1.9.0",
     "@opentelemetry/sdk-node": "^0.50.0",

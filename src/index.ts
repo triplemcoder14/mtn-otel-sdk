@@ -30,7 +30,7 @@ export function initTelemetry(): void {
       console.error('[mtn-otel-sdk] Error initializing OpenTelemetry:', error);
     });
 
-  // graceful shutdown
+  // gracefully shut down the sdk on process exit
   process.on('SIGTERM', () => sdk.shutdown());
   process.on('SIGINT', () => sdk.shutdown());
 }
