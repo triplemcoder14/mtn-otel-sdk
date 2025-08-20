@@ -19,16 +19,23 @@ export function initTelemetry(): void {
     traceExporter,
     serviceName,
     instrumentations: [getNodeAutoInstrumentations()],
-  });
 
-  sdk
-    .start()
-    .then(() => {
-      console.log(`[mtn-otel-sdk] OpenTelemetry initialized for "${serviceName}"`);
-    })
-    .catch((error) => {
-      console.error('[mtn-otel-sdk] Error initializing OpenTelemetry:', error);
-    });
+  });
+  try {
+    sdk.start();
+    console.log(`[mtn-otel-sdk] OpenTelemetry initialized for "${serviceName}"`);
+  } catch (error: unknown) {
+    console.error('[mtn-otel-sdk] Error initializing OpenTelemetry:', error);
+  }
+
+  // sdk
+  //   .start()
+  //   .then(() => {
+  //     console.log(`[mtn-otel-sdk] OpenTelemetry initialized for "${serviceName}"`);
+  //   })
+  //   .catch((error) => {
+  //     console.error('[mtn-otel-sdk] Error initializing OpenTelemetry:', error);
+  //   });
 
   // gracefully shut down the sdk on process exit
   process.on('SIGTERM', () => sdk.shutdown());
